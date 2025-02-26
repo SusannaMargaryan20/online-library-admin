@@ -22,10 +22,6 @@ Technologies Used
 
 Frontend: Angular (latest version)
 
-CSS Framework: Tailwind CSS / Bootstrap
-
-State Management: NgRx (if needed for complex state handling)
-
 API Calls: Fetch API / Axios
 
 UI Components: Angular Material / Custom UI Components
