@@ -1,59 +1,144 @@
-# NeetryTask
+Online Library Admin Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+Overview
 
-## Development server
+The Online Library Admin Application is a web-based admin panel that allows administrators to manage users, books/products, and persons efficiently. The application includes authentication, a dashboard with key statistics, and CRUD operations for users, books/products, and persons.
 
-To start a local development server, run:
+Features
 
-```bash
+Authentication: Simple login system using reqres.in API.
+
+Dashboard: Displays total count statistics for users, products/books, and persons.
+
+Users Management: List, create, update, and delete users with modal-based forms.
+
+Products/Books Management: Displays books/products in a card view with sorting and pagination.
+
+Persons Management: Lists persons in a table with local pagination, sorting, and search.
+
+Responsive Design: Adaptive layout for different screen sizes with a fixed navigation sidebar and header.
+
+Technologies Used
+
+Frontend: Angular (latest version)
+
+CSS Framework: Tailwind CSS / Bootstrap
+
+State Management: NgRx (if needed for complex state handling)
+
+API Calls: Fetch API / Axios
+
+UI Components: Angular Material / Custom UI Components
+
+API Endpoints Used
+
+Authentication
+
+Login: https://reqres.in/api/login
+
+Users Management
+
+Fetch Users: https://reqres.in/api/users?page=1
+
+CRUD Operations: Implemented using the same API structure
+
+Books/Products Management
+
+Fetch Products: https://fakerapi.it/api/v2/products
+
+Persons Management
+
+Fetch Persons: https://fakerapi.it/api/v2/persons?quantity=100
+
+Installation & Setup
+
+Clone the repository:
+
+git clone https://github.com/SusannaMargaryan20/online-library-admin.git
+
+Navigate into the project directory:
+
+cd online-library-admin
+
+Install dependencies:
+
+npm install
+
+Run the development server:
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open the application in your browser at:
 
-## Code scaffolding
+http://localhost:4200
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Features Breakdown
 
-```bash
-ng generate component component-name
-```
+Authentication
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Simple login page with email and password input fields.
 
-```bash
-ng generate --help
-```
+Sends login request to https://reqres.in/api/login.
 
-## Building
+Redirects to dashboard on successful login.
 
-To build the project run:
+Dashboard
 
-```bash
-ng build
-```
+Displays key statistics: Total Users, Products, Persons.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Fixed sidebar navigation for easy access to different sections.
 
-## Running unit tests
+Logout functionality.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Users Page
 
-```bash
-ng test
-```
+Displays a list of users in a table.
 
-## Running end-to-end tests
+CRUD (Create, Read, Update, Delete) operations using a modal form.
 
-For end-to-end (e2e) testing, run:
+Fetches users from https://reqres.in/api/users?page=1.
 
-```bash
-ng e2e
-```
+Products/Books Page
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Displays books/products in a card view (Name, Price, Image).
 
-## Additional Resources
+Implements pagination (10 items per page, max 50 items).
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Sorting by title (asc, desc, none).
+
+Fetches data from https://fakerapi.it/api/v2/books or https://fakerapi.it/api/v2/products.
+
+Persons Page
+
+Displays persons in a table (First Name, Last Name, Email, Phone, Website).
+
+Local pagination with 10 items per page.
+
+Local sorting by Phone and First Name.
+
+Local search on Email, First Name, Last Name.
+
+Fetches persons from https://fakerapi.it/api/v2/persons?quantity=100.
+
+Responsive Design
+
+Sidebar is collapsible for smaller screens.
+
+Table and card views adjust dynamically for mobile and desktop users.
+
+Future Enhancements
+
+Implement authentication token handling.
+
+Improve UI with animations and better styling.
+
+Add filters and advanced search options.
+
+Implement backend API for real data management.
+
+License
+
+This project is open-source and available for modification and distribution.
+
+Happy coding! 🚀
+
