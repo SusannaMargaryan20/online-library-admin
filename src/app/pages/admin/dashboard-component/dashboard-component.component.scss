@@ -1,0 +1,29 @@
+.main-content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .widget-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .widget {
+    width: 250px;
+    text-align: center;
+  }
+  
+  mat-card-title {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  mat-card-content {
+    font-size: 24px;
+    color: #3f51b5;
+  }
+  

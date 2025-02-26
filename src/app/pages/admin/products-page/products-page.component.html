@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="header">
+    <h1>Products</h1>
+  </div>
+
+
+  <div class="P-sorting-block">
+    <mat-form-field appearance="fill">
+      <mat-label>Sort by Price</mat-label>
+      <mat-select (selectionChange)="onSortChange($event)" [value]="sortOrder()">
+        <mat-option value="none">None</mat-option>
+        <mat-option value="asc">Ascending</mat-option>
+        <mat-option value="desc">Descending</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="product-grid">
+    <mat-card *ngFor="let product of paginatedProducts()" class="product-card">
+      <img mat-card-image [src]="product.images[0].url || product.image" alt="Product Image" />
+      <mat-card-content>
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.price }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+    <div class="btn-container" *ngIf="paginatedProducts().length < 50">
+      <button mat-raised-button color="primary" (click)="showMore()">Show More</button>
+    </div>
+</div>

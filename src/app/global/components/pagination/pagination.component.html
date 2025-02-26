@@ -1,0 +1,20 @@
+<div class="P-pagination-block">
+
+    <button (click)="previousPage()" [disabled]="currentPage() === 0"> 
+        <mat-icon>navigate_before</mat-icon>
+    </button>
+      
+    <ng-container *ngFor="let page of pageNumbers()">
+      <button
+        (click)="onPageClick(page)"
+        [class.active]="currentPage() === page"
+      >
+        {{ page + 1 }}
+      </button>
+    </ng-container>
+
+    <button (click)="nextPage()" [disabled]="currentPage() === totalPages() - 1">
+        <mat-icon>navigate_next</mat-icon>
+    </button>
+
+</div>

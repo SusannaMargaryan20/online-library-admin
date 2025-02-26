@@ -1,0 +1,43 @@
+<mat-sidenav-container class="sidenav-container">
+
+    <mat-sidenav #sidenav mode="side" [(opened)]="isMenuOpened" class="sidenav">
+
+        <div class="P-menu-btn">
+
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+
+        <mat-nav-list>
+            <a mat-list-item (click)="navigatePage()" routerLink="/admin/dashboard" routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }" class="P-nav-item">Dashboard</a>
+            <a mat-list-item (click)="navigatePage()" routerLink="/admin/users" routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }" class="P-nav-item">Users</a>
+            <a mat-list-item (click)="navigatePage()" routerLink="/admin/products" routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }" class="P-nav-item">Products</a>
+            <a mat-list-item (click)="navigatePage()" routerLink="/admin/persons" routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }" class="P-nav-item">Persons</a>
+        </mat-nav-list>
+
+
+    </mat-sidenav>
+
+
+    <mat-sidenav-content [ngClass]="isMenuOpened() ? 'P-open-content' : 'P-close-content' ">
+
+        <app-header [isOpenedMenuShow]="isMenuOpened">
+            @if (!sidenav.opened) {
+            <button mat-icon-button class="P-menu-open-btn" (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            }
+        </app-header>
+
+        <div class="P-main-content-block">
+            <router-outlet></router-outlet>
+        </div>
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

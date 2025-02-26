@@ -1,0 +1,36 @@
+<div class="login-container">
+    <mat-card>
+
+        <mat-card-title>Admin Login</mat-card-title>
+
+        <mat-card-content>
+            <form (ngSubmit)="login()" [formGroup]="loginForm">
+
+                <mat-form-field>
+                    <mat-label>Enter your email</mat-label>
+                    <input matInput placeholder="pat@example.com" formControlName="email" required />
+                    @if (submitted() && f.email.invalid) {
+                    <mat-error>Enter a valid email</mat-error>
+                    }
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput formControlName="password" [type]="isPassVisible() ? 'text' : 'password'" />
+                    <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="!isPassVisible()">
+                        <mat-icon>{{ isPassVisible() ? 'visibility' : 'visibility_off' }}</mat-icon>
+                    </button>
+                    @if (submitted() && f.password.invalid) {
+                    <mat-error>Enter a valid password</mat-error>
+                    }
+                </mat-form-field>
+
+                <div class="P-submitt-btn">
+                    <button mat-stroked-button color="primary" type="submit">Login</button>
+                </div>
+
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
